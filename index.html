@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Bloom | Luxury Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <img class="logo" src="images/Purple bloom hd logo.png" alt="Purple Bloom Logo">
+        
+        <!-- Desktop Menu -->
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+        
+        <button class="hamburger-btn" id="menuBtn">☰</button>
+        
+        <!-- Mobile menu nav -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-container" id="home">
+        <img class="hero-img" src="images/purple bloom horizhontal.png" alt="Purple Bloom Banner">
+        <div class="hero-overlay">
+            <span class="location-tag">Premium Residential Project in Dighi, Pune</span>
+            <h1>Happiness in bloom prosperity in life</h1>
+            <p>Luxury living tailored just for you.</p>
+            <button class="cta-btn" onclick="scrollToContact()">Enquire Now</button>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2>Why Choose Purple Bloom, Dighi</h2>
+        <p>Welcome to Purple Bloom,strategically located in <strong>Dighi, Pune</strong>. Experience a serene lifestyle with seamless connectivity to major IT hubs, schools, and hospitals. </p>
+
+
+        <!--Dighi connectivity highlights-->
+
+    <div class="location-highlights">
+        <div>Close to Bhosari & Vishrantwadi</div>
+        <div>Easy Access to Pune Airport</div>
+        <div>Near Commerzone & IT Parks</div>
+        
+    </div>
+    </section>
+
+    
+
+    <!-- Amenities Section -->
+    <section class="section amenities-bg" id="amenities">
+        <h2>World-Class Amenities</h2>
+        <div class="amenities-grid">
+            <div class="card">
+                <h3>🏊 Swimming Pool</h3>
+                <p>Relax and rejuvenate in our Olympic-sized pool.</p>
+            </div>
+            <div class="card">
+                <h3>🏋️ Modern Gym</h3>
+                <p>Fully equipped fitness center for your healthy lifestyle.</p>
+            </div>
+            <div class="card">
+                <h3>🏡 Clubhouse</h3>
+                <p>A premium space for your social gatherings and events.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Enquiry Section -->
+    <section class="section" id="contact">
+        <h2>Enquire Now</h2>
+        <p>Fill out the form below, and our property expert will get back to you shortly.</p>
+        
+        <div class="form-container">
+            <form id="enquiryForm">
+                <input type="text" name="Name"  placeholder="Your Full Name" required>
+                <input type="email" name="Email"   placeholder="Your Email Address" required>
+                <input type="tel" name="Phone"  placeholder="Your Phone Number" required>
+                <textarea name="Message"  placeholder="Any specific requirements?" rows="4"></textarea>
+                <button type="submit" class="submit-btn">Submit Details</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="section section-map" id="location">
+    <h2>Strategic Location</h2>
+    <p>Dighi Alandi Road, Pune - Perfectly connected to everything you need.</p>
+    <div class="map-container">
+    <!-- Client ke link ko embedded format me convert kiya hua iframe -->
+    <iframe 
+        src="https://maps.google.com/maps?q=18.6169693,73.8699317&z=17&output=embed" 
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Purple Bloom Real Estate. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
