@@ -281,7 +281,7 @@ footer {
 
     .hero-overlay {
         justify-content: flex-start !important; /* Content ko top se shuru karega */
-        padding-top: 45px !important; /* 💡 Aapka Idea: Desktop ki badi padding ko chota kiya taaki button upar aa jaye */
+        padding-top: 110px !important; /* 💡 Aapka Idea: Desktop ki badi padding ko chota kiya taaki button upar aa jaye */
         padding-left: 15px !important;
         padding-right: 15px !important;
     }
@@ -294,7 +294,7 @@ footer {
     
     .hero-overlay p {
         font-size: 0.95rem !important;
-        margin-bottom: 15px !important; /* Spacing kam ki taaki button upar khisag jaye */
+        margin-bottom: 25px !important; /* Spacing kam ki taaki button upar khisag jaye */
     }
 
     /* Agar aapke HTML me location-tag (PREMIUM RESIDENTIAL...) hai toh uska gap tight karne ke liye */
