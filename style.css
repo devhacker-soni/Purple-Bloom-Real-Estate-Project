@@ -81,7 +81,8 @@ body {
 .hero-container {
     position: relative;
     width: 100%;
-    height: auto;
+    /* height: auto; */
+    height: 110vh;
     overflow: hidden;
 }
 
@@ -90,6 +91,7 @@ body {
     /* object-fit: contain; */
     display: block;
     height: auto;
+    object-fit: cover;
 }
 
 .hero-overlay {
@@ -108,6 +110,7 @@ body {
     padding-top: 400px;
     /* padding-top: 100px; */
     box-sizing: border-box;
+    z-index: 2;
 }
 
 .hero-overlay h1 {
