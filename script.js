@@ -51,3 +51,25 @@ form.addEventListener('submit', e => {
         submitBtn.innerText = 'Submit Details'
     })
 })
+
+
+
+let currentIndex = 0;
+
+function moveSlide(direction) {
+  const track = document.getElementById('track');
+  const totalImages = track.querySelectorAll('img').length;
+
+  currentIndex = currentIndex + direction;
+
+  if (currentIndex >= totalImages) {
+    currentIndex = 0;
+  }
+  
+  if (currentIndex < 0) {
+    currentIndex = totalImages - 1;
+  }
+
+  // Slide karne ka logic
+  track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}

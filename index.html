@@ -36,7 +36,7 @@
 
     <!-- Hero Section -->
     <header class="hero-container" id="home">
-        <img class="hero-img" src="images/purple bloom horizhontal.png" alt="Purple Bloom Banner">
+        <img class="hero-img" src="images/purple bloom horizhontal.png" alt="Purple Bloom Banner" fetchpriority="high">
         <div class="hero-overlay">
             <span class="location-tag">Premium Residential Project in Dighi, Pune</span>
             <h1>Happiness in bloom prosperity in life</h1>
@@ -79,6 +79,24 @@
                 <h3>🏡 Clubhouse</h3>
                 <p>A premium space for your social gatherings and events.</p>
             </div>
+        </div>
+    </section>
+
+
+    <section class="section" id="gallery">
+        <h2>Project Gallery</h2>
+        <p>Take a virtual tour of Purple Bloom</p>
+        
+        <div class="slider-container">
+            <div class="slider-track" id="track">
+                <img src="images/ChatGPT Image Jun 17, 2026, 11_47_15 AM.png" alt="Gallery 1">
+                <img src="images/Pruple bloom web.png" alt="Gallery 2">
+                <img src="images/The Bloom empire.png" alt="Gallery 3">
+                <img src="images/ChatGPT Image Jun 17, 2026, 12_18_09 PM.png" alt="Gallery 4">
+            </div>
+
+            <button class="btn prev" type="button" onclick="moveSlide(-1)">❮</button>
+            <button class="btn next" type="button" onclick="moveSlide(1)">❯</button>
         </div>
     </section>
 
