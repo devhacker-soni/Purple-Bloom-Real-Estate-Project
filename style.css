@@ -259,6 +259,7 @@ footer {
 /* Responsive Media Queries */
 /* Responsive Media Queries */
 /* Responsive Media Queries - FINAL ULTRA FIX */
+/* Responsive Media Queries - FINAL WITH MOBILE PADDING FIX */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -267,9 +268,9 @@ footer {
         display: block;
     }
     
-    /* 📱 Hero Section Mobile Fix */
+    /* 📱 Hero Section Mobile Layout Fix (Text aur Button wapas lane ke liye) */
     .hero-container {
-        height: 60vh !important; 
+        height: 65vh !important; /* Mobile ke liye safe height */
     }
     
     .hero-img {
@@ -278,19 +279,40 @@ footer {
         object-fit: cover !important; 
     }
 
+    .hero-overlay {
+        justify-content: flex-start !important; /* Content ko top se shuru karega */
+        padding-top: 45px !important; /* 💡 Aapka Idea: Desktop ki badi padding ko chota kiya taaki button upar aa jaye */
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
     .hero-overlay h1 {
-        font-size: 1.8rem !important; 
+        font-size: 1.6rem !important; /* Font size thoda chota kiya taaki mobile me wrap na ho ajeeb se */
+        margin-bottom: 5px !important;
         letter-spacing: 1px !important;
     }
     
     .hero-overlay p {
-        font-size: 1rem !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 15px !important; /* Spacing kam ki taaki button upar khisag jaye */
     }
 
-    /* 🎚️ Mobile Slider Rules (Force Full Image) */
+    /* Agar aapke HTML me location-tag (PREMIUM RESIDENTIAL...) hai toh uska gap tight karne ke liye */
+    .location-tag {
+        margin-bottom: 10px !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Enquire Now Button Mobile Optimization */
+    .cta-btn {
+        padding: 10px 24px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* 🎚️ Mobile Slider Rules (Force Full Image without Cropping) */
     .slider-container {
         width: 100% !important;       
-        height: auto !important; /* Fixed height ko hatane ke liye force kiya */    
+        height: auto !important;     
         aspect-ratio: 4 / 3 !important; 
         border-radius: 0 !important;  
     }
@@ -302,7 +324,7 @@ footer {
     .slider-track img {
         width: 100% !important;
         height: 100% !important;
-        object-fit: contain !important; /* 👈 Iske sath !important lagane se image kabhi nahi kategi */
+        object-fit: contain !important; 
         background-color: #f5efff !important; 
     }
 
