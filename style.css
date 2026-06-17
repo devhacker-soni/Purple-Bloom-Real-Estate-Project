@@ -254,6 +254,8 @@ footer {
 }
 
 /* Responsive Media Queries */
+/* Responsive Media Queries */
+/* Responsive Media Queries - FINAL ULTRA FIX */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
@@ -261,20 +263,49 @@ footer {
     .hamburger-btn {
         display: block;
     }
-    .hero-overlay h1 {
-        font-size: 2rem;
+    
+    /* 📱 Hero Section Mobile Fix */
+    .hero-container {
+        height: 60vh !important; 
+    }
+    
+    .hero-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; 
     }
 
-    /* ⬇️ MOBILE KE LIYE SLIDER RULES - INHE ADD KAREIN ⬇️ */
+    .hero-overlay h1 {
+        font-size: 1.8rem !important; 
+        letter-spacing: 1px !important;
+    }
+    
+    .hero-overlay p {
+        font-size: 1rem !important;
+    }
+
+    /* 🎚️ Mobile Slider Rules (Force Full Image) */
     .slider-container {
-        width: 100%;       /* Mobile par poori width le sake */
-        height: 300px;     /* Sabse important! Mobile par height 700px se ghata kar 300px kar di */
-        border-radius: 0;  /* Agar full screen chipka hua chahiye toh radius hata sakte hain */
+        width: 100% !important;       
+        height: auto !important; /* Fixed height ko hatane ke liye force kiya */    
+        aspect-ratio: 4 / 3 !important; 
+        border-radius: 0 !important;  
+    }
+
+    .slider-track {
+        height: 100% !important;
+    }
+
+    .slider-track img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important; /* 👈 Iske sath !important lagane se image kabhi nahi kategi */
+        background-color: #f5efff !important; 
     }
 
     .btn {
-        padding: 10px 14px; /* Mobile par buttons thode chhote karne ke liye */
-        font-size: 16px;
+        padding: 10px 14px !important; 
+        font-size: 16px !important;
     }
 }
 
