@@ -81,14 +81,15 @@ body {
 .hero-container {
     position: relative;
     width: 100%;
-    height: 70vh;
+    height: auto;
     overflow: hidden;
 }
 
 .hero-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    /* object-fit: contain; */
+    display: block;
+    height: auto;
 }
 
 .hero-overlay {
@@ -104,8 +105,8 @@ body {
     align-items: center;
     color: white;
     text-align: center;
-    /* padding: 20px; */
-    padding-top: 100px;
+    padding-top: 120px;
+    /* padding-top: 100px; */
     box-sizing: border-box;
 }
 
@@ -263,6 +264,18 @@ footer {
     .hero-overlay h1 {
         font-size: 2rem;
     }
+
+    /* ⬇️ MOBILE KE LIYE SLIDER RULES - INHE ADD KAREIN ⬇️ */
+    .slider-container {
+        width: 100%;       /* Mobile par poori width le sake */
+        height: 300px;     /* Sabse important! Mobile par height 700px se ghata kar 300px kar di */
+        border-radius: 0;  /* Agar full screen chipka hua chahiye toh radius hata sakte hain */
+    }
+
+    .btn {
+        padding: 10px 14px; /* Mobile par buttons thode chhote karne ke liye */
+        font-size: 16px;
+    }
 }
 
 /* Hero Section ke upar location tag */
@@ -309,13 +322,13 @@ footer {
 
 .slider-container {
   position: relative;
-  width: 100%;
-  max-width: 800px; /* Aap is width ko apne hisab se chhota-bada kar sakte ho */
-  height: 450px;
-  margin: 30px auto 0 auto;
+  width: 90%; /* Ye slider ko poori width dega */
+  max-width: 100%; /* Kisi bhi tarah ka side space hatane ke liye ise 100% kiya */
+  height: 700px; /* Aap height apne hisab se set kar sakte ho */
+  margin: 30px auto 0 auto; /* Top/Bottom/Left/Right ka saara margin zero kar diya */
   overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-radius: 15px;
+  
 }
 
 .slider-track {
@@ -348,3 +361,10 @@ footer {
 .prev { left: 15px; }
 .next { right: 15px; }
 .btn:hover { background-color: rgba(0, 0, 0, 0.8); }
+
+/* Gallery section ki saari side padding khatam karne ke liye */
+#gallery {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-bottom: 30px;
+}
