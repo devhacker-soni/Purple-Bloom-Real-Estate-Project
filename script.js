@@ -18,21 +18,13 @@ function scrollToContact() {
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 }
 
-// Form Submission Alert (Dummy)
-// document.getElementById('enquiryForm').addEventListener('submit', function(e) {
-//     e.preventDefault();
-//     alert('Thank you for your enquiry! Our team will contact you shortly.');
-//     this.reset(); // Form clear karne ke liye
-// });
-
-// Google Sheet Web App URL yahan paste karein
+// Google Sheet Web App Integration
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxuqWkvfS9T37IxI5FQ5G14eEEwxybVo5VaEKZGDxFZXdytugp_NNNNVpHS7N9lrjSElw/exec'
 const form = document.getElementById('enquiryForm')
 
 form.addEventListener('submit', e => {
   e.preventDefault()
   
-  // Submit button ko disable karna taaki user baar-baar click na kare
   const submitBtn = form.querySelector('.submit-btn')
   submitBtn.disabled = true
   submitBtn.innerText = 'Submitting...'
@@ -42,7 +34,7 @@ form.addEventListener('submit', e => {
         alert('Thank you for your enquiry! Our team will contact you shortly.')
         submitBtn.disabled = false
         submitBtn.innerText = 'Submit Details'
-        form.reset() // Form clear karne ke liye
+        form.reset() 
     })
     .catch(error => {
         console.error('Error!', error.message)
@@ -52,24 +44,44 @@ form.addEventListener('submit', e => {
     })
 })
 
-
-
+// ==========================================
+// UPGRADED INFINITE LOOP SLIDER LOGIC
+// ==========================================
 let currentIndex = 0;
+let isMoving = false; // Isse fast click karne par slider glitch nahi karega
 
 function moveSlide(direction) {
+  if (isMoving) return; 
+  
   const track = document.getElementById('track');
-  const totalImages = track.querySelectorAll('img').length;
+  const images = track.querySelectorAll('img');
+  const totalImages = images.length;
 
+  isMoving = true;
   currentIndex = currentIndex + direction;
 
-  if (currentIndex >= totalImages) {
-    currentIndex = 0;
-  }
-  
-  if (currentIndex < 0) {
-    currentIndex = totalImages - 1;
-  }
-
-  // Slide karne ka logic
+  // Track ko smooth aage badhayein
+  track.style.transition = "transform 0.5s ease-in-out";
   track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+  // Animation khatam hone ka wait karein, fir loop handle karein
+  track.addEventListener('transitionend', function handler() {
+    track.removeEventListener('transitionend', handler); 
+    
+    // 1. Next dabate huye agar aakhiri image ke paar chale gaye
+    if (currentIndex >= totalImages) {
+      track.style.transition = "none"; // Animation ko ek pal ke liye band kiya
+      currentIndex = 0;                // Index wapas 0 kiya
+      track.style.transform = `translateX(0%)`; // Bina piche laute chupke se pehli photo par set kiya
+    }
+    
+    // 2. Prev dabate huye agar 0 ke piche chale gaye
+    if (currentIndex < 0) {
+      track.style.transition = "none"; 
+      currentIndex = totalImages - 1;  
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    isMoving = false; // Slider ko agle click ke liye taiyar kiya
+  });
 }
