@@ -298,15 +298,20 @@ footer {
         letter-spacing: 0px !important;
     }
     
+    /* 📱 Tagline Text ("WHERE HAPPINESS FIND...") */
     .hero-overlay p {
-        font-size: 0.8rem !important;
-        margin-bottom: 8px !important;
+        font-size: 0.85rem !important; /* 👈 0.95rem se ghata kar 0.85rem kiya */
+        margin-bottom: 12px !important; 
+        font-weight: 500 !important;
+        letter-spacing: 0.5px !important;
     }
 
-   .location-tag {
-        margin-bottom: 5px !important;
-        font-size: 0.7rem !important;
-        padding: 3px 10px !important;
+  /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") */
+    .location-tag {
+        font-size: 0.7rem !important; /* 👈 Font ko ekdum sleek kiya */
+        padding: 6px 12px !important; /* 👈 Padding kam ki taaki capsule chota ho jaye */
+        max-width: 90% !important;   /* Taaki screen ke edges se chipke na */
+        margin: 0 auto 15px auto !important; /* Center me rahe aur neeche se thoda gap de */
     }
     /* Enquire Now Button Mobile Optimization */
     .cta-btn {
