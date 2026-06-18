@@ -298,20 +298,20 @@ footer {
         letter-spacing: 0px !important;
     }
     
-   /* 📱 Tagline Text ("WHERE HAPPINESS FIND...") - EXTRA COMPACT */
+   /* 📱 Tagline Text ("WHERE HAPPINESS FIND...") - SUPER COMPACT */
     .hero-overlay p {
-        font-size: 0.75rem !important; /* 👈 0.85rem se ghata kar 0.75rem kiya */
-        margin-bottom: 8px !important;  /* Spacing aur tight ki */
+        font-size: 0.68rem !important; /* 👈 0.75rem se ghata kar 0.68rem kiya */
+        margin-bottom: 5px !important;  /* Spacing aur zyada tight kar di */
         font-weight: 500 !important;
-        letter-spacing: 0.3px !important;
+        letter-spacing: 0.2px !important;
     }
 
-    /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") - EXTRA SLEEK */
+    /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") - ULTRA SLEEK & THIN */
     .location-tag {
-        font-size: 0.62rem !important; /* 👈 Text ko aur chota aur micro kiya */
-        padding: 4px 10px !important;  /* 👈 Padding ekdum minimal kar di taaki capsule bilkul patla ho jaye */
-        max-width: 85% !important;    /* Width thodi aur kam ki */
-        margin: 0 auto 10px auto !important; /* Bottom margin bhi kam kiya */
+        font-size: 0.58rem !important; /* 👈 Text ko ekdum micro zone me daal diya */
+        padding: 3px 8px !important;   /* 👈 Padding ko behad kam kiya taaki capsule ekdum patli strip jaisa lage */
+        max-width: 80% !important;    /* Width ko 85% se 80% kiya taaki screen par compact dikhe */
+        margin: 0 auto 8px auto !important; /* Bottom gap aur tight kiya */
     }
     /* Enquire Now Button Mobile Optimization */
     .cta-btn {
