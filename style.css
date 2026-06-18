@@ -308,17 +308,19 @@ footer {
     /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") - EXTRA SLEEK */
     /* 🌟 LOCATION TAG: Desktop par middle me tha, mobile par isko sabse TOP par bheja */
     /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") - SLIM & CLASSY */
+   /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") - FORCED TINY FIX */
     .location-tag {
         order: 1 !important; 
-        font-size: 0.6rem !important;      /* 👈 Text ko chota aur refined kiya */
-        padding: 5px 10px !important;      /* 👈 Padding bohot kam ki taaki capsule patla ho jaye */
-        max-width: 75% !important;        /* 👈 Width ko kam kiya taaki ye screen par faila hua na lage */
-        width: fit-content !important;     /* 👈 Taaki capsule utna hi bada ho jitna andar ka text hai */
-        line-height: 1.2 !important;       /* Text ke beech ka vertical space tight kiya */
-        display: inline-block !important;  
-        margin: 5px auto 0 auto !important; /* Center me align rakhne ke liye */
-        text-transform: uppercase;         /* Premium look ke liye */
-        letter-spacing: 0.5px;
+        font-size: 0.58rem !important;      /* Text ko ekdum micro kiya */
+        padding: 4px 10px !important;       /* Padding ko ekdum squeeze kar diya */
+        width: auto !important;             /* Block width ko khatam kiya */
+        max-width: 80% !important; 
+        display: inline-block !important;   /* Taaki padding sahi se apply ho */
+        line-height: 1.1 !important;        /* Text ke upar-niche ka gap khatam */
+        height: auto !important;            /* Kisi bhi purani height ko override karne ke liye */
+        margin: 5px auto 0 auto !important; /* Screen ke center me rakhne ke liye */
+        text-transform: uppercase !important;
+        letter-spacing: 0.3px !important;
     }
     /* Enquire Now Button Mobile Optimization */
     /* 🌟 ENQUIRE NOW BUTTON: Yeh hamesha ki tarah sabse niche hi rahega */
