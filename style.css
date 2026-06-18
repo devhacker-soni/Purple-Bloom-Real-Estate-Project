@@ -298,23 +298,27 @@ footer {
     
   /* 🌟 TAGLINE TEXT (P TAG): Desktop par top par tha, mobile par isko NICHE bhej rahe hain */
     .hero-overlay p {
-        order: 2 !important; /* 👈 Order 2 yani capsule ke niche */
-        /* margin-top: auto lagane se ye beech ka saara space upar chhod dega aur button ke sath niche chipak jayega */
-        margin-top: auto !important; 
+        order: 2 !important;
         font-size: 0.8rem !important;
-        margin-bottom: 10px !important; /* Button se thoda gap */
+        margin-top: 15px !important;    /* 👈 Capsule se halka sa gap maintain karne ke liye */
+        margin-bottom: 8px !important;  /* Button se gap */
         line-height: 1.3 !important;
     }
 
     /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") - EXTRA SLEEK */
     /* 🌟 LOCATION TAG: Desktop par middle me tha, mobile par isko sabse TOP par bheja */
+    /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") - SLIM & CLASSY */
     .location-tag {
-        order: 1 !important; /* 👈 Order 1 yani sabse upar dikhega */
-        font-size: 0.65rem !important; 
-        padding: 5px 12px !important;  
-        max-width: 85% !important;    
-        margin-top: 5px !important; /* Top screen se thoda gap */
-        margin-bottom: 0 !important;
+        order: 1 !important; 
+        font-size: 0.6rem !important;      /* 👈 Text ko chota aur refined kiya */
+        padding: 5px 10px !important;      /* 👈 Padding bohot kam ki taaki capsule patla ho jaye */
+        max-width: 75% !important;        /* 👈 Width ko kam kiya taaki ye screen par faila hua na lage */
+        width: fit-content !important;     /* 👈 Taaki capsule utna hi bada ho jitna andar ka text hai */
+        line-height: 1.2 !important;       /* Text ke beech ka vertical space tight kiya */
+        display: inline-block !important;  
+        margin: 5px auto 0 auto !important; /* Center me align rakhne ke liye */
+        text-transform: uppercase;         /* Premium look ke liye */
+        letter-spacing: 0.5px;
     }
     /* Enquire Now Button Mobile Optimization */
     /* 🌟 ENQUIRE NOW BUTTON: Yeh hamesha ki tarah sabse niche hi rahega */
