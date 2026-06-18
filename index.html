@@ -8,12 +8,16 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <head>
+    <link rel="preload" as="image" href="images/logo.webp">
+    <link rel="preload" as="image" href="images/banner pb.webp">
+</head>
 </head>
 
 <body>
     <!-- Navbar Section -->
     <nav class="navbar">
-        <img class="logo" src="images/logo.webp" alt="Purple Bloom Logo">
+        <img class="logo" src="images/logo.webp" alt="Purple Bloom Logo" fetchpriority="high">
         
         <!-- Desktop Menu -->
         <div class="nav-links">
