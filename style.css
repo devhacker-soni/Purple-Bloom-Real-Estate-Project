@@ -297,39 +297,29 @@ footer {
     }
     
   /* 🌟 TAGLINE TEXT (P TAG): Desktop par top par tha, mobile par isko NICHE bhej rahe hain */
-    .hero-overlay p {
-        order: 2 !important; 
-        margin-top: auto !important;        /* 👈 Yeh isko aur button dono ko ek sath niche push karega */
-        font-size: 0.78rem !important;
-        margin-bottom: 5px !important;      /* 👈 Isko 10px se 5px kiya taaki button ke ekdum nazdik aa jaye */
-        line-height: 1.2 !important;
+   .hero-overlay p {
+        font-size: 0.85rem !important;
+        margin-top: auto !important; /* Enquire button ke sath niche tike rehne ke liye */
+        margin-bottom: 12px !important;
+        line-height: 1.3 !important;
     }
-
     /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") - EXTRA SLEEK */
     /* 🌟 LOCATION TAG: Desktop par middle me tha, mobile par isko sabse TOP par bheja */
     /* 📱 Capsule Tag ("PREMIUM RESIDENTIAL PROJECT...") - SLIM & CLASSY */
    /* 🌟 LOCATION TAG: ULTRA SLEEK & COMPACT */
+    /* 🌟 LOCATION TAG: Mobile me bilkul hide karne ke liye */
     .location-tag {
-        order: 1 !important; 
-        font-size: 0.55rem !important;      /* 👈 Font thoda aur chota kiya */
-        padding: 3px 10px !important;       /* 👈 Padding ekdum minimal taaki capsule patla lage */
-        max-width: 70% !important;         /* 👈 Width aur kam kar di taaki zyada faila na dikhe */
-        width: fit-content !important;      
-        display: inline-block !important;  
-        line-height: 1 !important;          
-        margin: 5px auto 0 auto !important; 
-        text-transform: uppercase !important;
-        letter-spacing: 0.5px !important;
+        display: none !important; /* 👈 Isse mobile screen par ye tag gayab ho jayega */
     }
     /* Enquire Now Button Mobile Optimization */
     /* 🌟 ENQUIRE NOW BUTTON: Yeh hamesha ki tarah sabse niche hi rahega */
     /* 🌟 ENQUIRE NOW BUTTON: BOTTOM PAR LOCKED */
-    .cta-btn {
-        order: 3 !important; 
-        padding: 5px 14px !important; 
-        font-size: 0.78rem !important;
-        margin-bottom: 5px !important;      /* Bottom edge se gap */
-    }
+   .cta-btn {
+        padding: 6px 18px !important;
+        font-size: 0.85rem !important;
+        margin-bottom: 10px !important;
+    }    /* Bottom edge se gap */
+    
     /* 🎚️ Mobile Slider Rules (Force Full Image without Cropping) */
     .slider-container {
         width: 100% !important;       
