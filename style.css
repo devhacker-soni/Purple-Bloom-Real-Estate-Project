@@ -470,3 +470,25 @@ footer {
   right: 20px;  /* Right se gap */
   z-index: 9999; /* Taaki ye hamesha sabhi elements ke upar dikhe */
 }
+
+.whatsapp-icon-link {
+  display: inline-block;
+  width: 60px;          /* Size match karne ke liye */
+  height: 60px;         
+    /* Perfect Circle */
+  overflow: hidden;     
+  transition: transform 0.2s ease; 
+}
+
+.whatsapp-icon-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   
+  border: 2px solid #7b1fa2;
+  border-radius: 50%; 
+}
+
+/* Hover effect */
+.whatsapp-icon-link:hover {
+  transform: scale(1.1); 
+}
