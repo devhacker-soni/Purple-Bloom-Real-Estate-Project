@@ -103,10 +103,10 @@
 <div class="exclusive-gallery-scroll" id="galleryScroll">
 
     <!-- [1/6] Image (6:19 Ratio - Vertical/Long) -->
-    <div class="exclusive-card locked" onclick="openUnlockForm()">
+    <div class="exclusive-card locked" onclick="document.getElementById('formModal').style.setProperty('display', 'flex', 'important');">
         <div class="image-wrapper">
-            <img src="images/Gallery-1.webp" alt="Building Tower Elevation">
-            <div class="lock-overlay"><span>🔒 Click to Unlock View</span></div>
+            <img src="images/Gallery-1.webp" alt="Building Tower Elevation" >
+            <div class="lock-overlay"><span>🔒 Click to Unlock Layout</span></div>
         </div>
         <div class="exclusive-info">
             <h4>Artistic 3D Floor Plan - Premium 2 BHK Layout</h4>
@@ -114,23 +114,11 @@
         </div>
     </div>
 
-    <!-- [2/6] Image (6:19 Ratio - Vertical/Long) -->
-    <div class="exclusive-card locked" onclick="openUnlockForm()">
-        <div class="image-wrapper">
-            <img src="images/Gallery-2.webp" alt="External Structural View">
-            <div class="lock-overlay"><span>🔒 Click to Unlock View</span></div>
-        </div>
-        <div class="exclusive-info">
-            <h4>Panoramic City & Hill View from Dighi</h4>
-            <p>Experience mesmerizing scenic views every single day right from your balcony. Perfectly connected to the city, yet beautifully nested close to nature</p>
-        </div>
-    </div>
-
     <!-- [3/6] Image (4:3 Ratio - Wide/Rectangular) -->
-    <div class="exclusive-card locked" onclick="openUnlockForm()">
+    <div class="exclusive-card locked"onclick="document.getElementById('formModal').style.setProperty('display', 'flex', 'important');">
         <div class="image-wrapper">
             <img src="images/Gallery-3.webp" alt="2 BHK Living Room Layout">
-            <div class="lock-overlay"><span>🔒 Click to Unlock View</span></div>
+            <div class="lock-overlay"><span>🔒 Click to Unlock Layout</span></div>
         </div>
         <div class="exclusive-info">
             <h4>Live Construction Status - 70% Completed</h4>
@@ -139,10 +127,10 @@
     </div>
 
     <!-- [4/6] Image (6:19 Ratio - Vertical/Long) -->
-    <div class="exclusive-card locked" onclick="openUnlockForm()">
+    <div class="exclusive-card locked"onclick="document.getElementById('formModal').style.setProperty('display', 'flex', 'important');">
         <div class="image-wrapper">
             <img src="images/Gallery-4.webp" alt="Balcony View">
-            <div class="lock-overlay"><span>🔒 Click to Unlock View</span></div>
+            <div class="lock-overlay"><span>🔒 Click to Unlock Layout</span></div>
         </div>
         <div class="exclusive-info">
             <h4>Your New Lifestyle Awaits - Near Possession Stage</h4>
@@ -151,10 +139,10 @@
     </div>
 
     <!-- [5/6] Image (6:19 Ratio - Vertical/Long) -->
-    <div class="exclusive-card locked" onclick="openUnlockForm()">
+    <div class="exclusive-card locked"onclick="document.getElementById('formModal').style.setProperty('display', 'flex', 'important');">
         <div class="image-wrapper">
             <img src="images/Gallery-5.webp" alt="Entrance Corridor">
-            <div class="lock-overlay"><span>🔒 Click to Unlock View</span></div>
+            <div class="lock-overlay"><span>🔒 Click to Unlock Layout</span></div>
         </div>
         <div class="exclusive-info">
             <h4>Unmatched Connectivity & Serene Hillside Lifespaces</h4>
@@ -163,10 +151,10 @@
     </div>
 
     <!-- [6/6] Image (4:3 Ratio - Wide/Rectangular) -->
-    <div class="exclusive-card locked" onclick="openUnlockForm()">
+    <div class="exclusive-card locked" onclick="document.getElementById('formModal').style.setProperty('display', 'flex', 'important');">
         <div class="image-wrapper">
             <img src="images/Gallery-6.webp" alt="Clubhouse Amenities View">
-            <div class="lock-overlay"><span>🔒 Click to Unlock View</span></div>
+            <div class="lock-overlay"><span>🔒 Click to Unlock Layout</span></div>
         </div>
         <div class="exclusive-info">
             <h4>A Prime Investment Opportunity - Unmatchable Location</h4>
@@ -184,8 +172,8 @@
         <p>Please fill out this quick form to view high-resolution project site images & details.</p>
         
         <form id="unlockLeadForm" onsubmit="handleFormSubmit(event)">
-            <input type="text" placeholder="Your Name" required>
-            <input type="tel" placeholder="Phone Number" required>
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="tel" name="Phone" placeholder="Phone Number" required>
             <button type="submit" class="submit-btn">Unlock Now 🔑</button>
         </form>
         <button class="close-modal" onclick="closeUnlockForm()">Cancel</button>

@@ -119,3 +119,44 @@ function handleFormSubmit(event) {
         if (overlay) overlay.remove();
     });
 }
+
+// Apni Google Script ka Deployment Web App URL yahan paste kijiye
+const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbx0hPhQywNXIZOieXFjUFuoWWHMJE-ugpFhGKvSEC__FndYtYrBUgGEKzPqqa9RhzlI/exec"; 
+
+function closeUnlockForm() {
+    document.getElementById('formModal').style.setProperty('display', 'none', 'important');
+}
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const submitBtn = event.target.querySelector('.submit-btn');
+    const originalBtnText = submitBtn.innerText;
+    submitBtn.innerText = "Unlocking... ⏳";
+    submitBtn.disabled = true;
+
+    const formData = new FormData(event.target);
+
+    fetch(GOOGLE_SHEET_WEBAPP_URL, {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        closeUnlockForm();
+        
+        // Form submit hote hi saare cards se lock aur click function hata dena
+        const cards = document.querySelectorAll('.exclusive-card');
+        cards.forEach(card => {
+            card.classList.remove('locked');
+            card.removeAttribute('onclick'); // Click hona band ho jayega unlock hone ke baad
+            const overlay = card.querySelector('.lock-overlay');
+            if (overlay) overlay.remove();
+        });
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Kuch dikkat aayi, kripya dobara koshish karein.');
+        submitBtn.innerText = originalBtnText;
+        submitBtn.disabled = false;
+    });
+}
