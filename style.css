@@ -262,7 +262,7 @@ footer {
 /* Responsive Media Queries - FINAL WITH MOBILE PADDING FIX */
 @media (max-width: 768px) {
 
-    #about h2 {
+    h2 {
         font-size: 22px !important;
         line-height: 1.3 !important;
     }
