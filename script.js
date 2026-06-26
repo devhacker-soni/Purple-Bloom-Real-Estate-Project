@@ -85,3 +85,37 @@ function moveSlide(direction) {
     isMoving = false; // Slider ko agle click ke liye taiyar kiya
   });
 }
+
+// Variable check karne ke liye ki images unlocked hain ya nahi
+let isUnlocked = false;
+
+function openUnlockForm() {
+    // Agar pehle se unlocked hai, toh dobara form nahi khulega
+    if (isUnlocked) return; 
+    
+    document.getElementById('formModal').style.display = 'flex';
+}
+
+function closeUnlockForm() {
+    document.getElementById('formModal').style.display = 'none';
+}
+
+function handleFormSubmit(event) {
+    event.preventDefault(); // Page refresh hone se rokne ke liye
+    
+    // Yahan aap apna Google Sheets api push wala code sync kar sakti hain
+    
+    isUnlocked = true;
+    closeUnlockForm();
+    
+    // Sabhi image cards se 'locked' class hatayein aur overlays remove karein
+    const cards = document.querySelectorAll('.exclusive-card');
+    cards.forEach(card => {
+        card.classList.remove('locked');
+        
+        // Remove click actions and overlays
+        card.removeAttribute('onclick');
+        const overlay = card.querySelector('.lock-overlay');
+        if (overlay) overlay.remove();
+    });
+}

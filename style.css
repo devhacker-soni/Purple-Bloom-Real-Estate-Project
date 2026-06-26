@@ -492,3 +492,134 @@ footer {
 .whatsapp-icon-link:hover {
   transform: scale(1.1); 
 }
+
+/* Gallery Container & Scroll Box */
+.exclusive-gallery-scroll {
+   max-height: 550px !important;
+    overflow-y: auto !important;
+    display: grid !important; /* Flexbox se Grid par switch kiya safe framework ke liye */
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    padding: 12px !important;
+}
+
+/* Image Card Basics */
+.exclusive-card {
+   width: 100% !important;
+    background: #fff !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+}
+
+.image-wrapper {
+   position: relative !important;
+    width: 100% !important;
+    /* 16:9 widescreen layout standard size me enforce karne ke liye */
+    aspect-ratio: 16 / 9 !important; 
+    background-color: #f7f7f9 !important;
+    overflow: hidden !important;
+}
+
+.image-wrapper img {
+ position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important; /* Browser overrides todne ke liye */
+    object-fit: contain !important; /* Bina kate (uncut) full resolution render karega */
+    object-position: center !important;
+    transition: filter 0.3s ease !important;
+}
+
+/* --- LUCK & BLUR LOGIC --- */
+.exclusive-card.locked img {
+   filter: blur(14px) !important;
+}
+
+.lock-overlay {
+    position: absolute !important;
+    top: 0 !important; left: 0 !important;
+    width: 100% !important; height: 100% !important;
+    background: rgba(147, 51, 234, 0.22) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 2 !important;
+}
+
+.lock-overlay span {
+    background: #9333ea;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Form Submit hone se pehle niche ki info hidden rahegi */
+.exclusive-card.locked .exclusive-info {
+    display: none;
+}
+
+.exclusive-info {
+    padding: 15px;
+    background: #fdfbfe;
+    border-top: 1px solid #f3e8ff;
+}
+
+/* --- MODAL POPUP STYLING --- */
+.form-modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none; /* Default me modal hidden rahega */
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.modal-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.modal-card form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.modal-card input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.submit-btn {
+    background: #9333ea;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: #777;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 13px;
+    text-decoration: underline;
+}
