@@ -19,12 +19,19 @@ function scrollToContact() {
 }
 
 // Google Sheet Web App Integration
-const scriptURL = 'https://script.google.com/macros/s/AKfycbxuqWkvfS9T37IxI5FQ5G14eEEwxybVo5VaEKZGDxFZXdytugp_NNNNVpHS7N9lrjSElw/exec'
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwqvuD-auTVYw8xbOwCyiJLjk9eIHRvWQd01kMD9BSbGauC-ynibRDyaViaMIkN550ZwA/exec'
 const form = document.getElementById('enquiryForm')
 
 form.addEventListener('submit', e => {
   e.preventDefault()
-  
+
+  // Honeypot check - agar bot ne hidden field fill kiya hai to silently ignore karo
+  const honeypotField = form.querySelector('.honeypot-field')
+  if (honeypotField && honeypotField.value !== '') {
+    console.log('Bot detected, submission blocked')
+    return // yahin rok do, request bhejne ki zarurat nahi
+  }
+
   const submitBtn = form.querySelector('.submit-btn')
   submitBtn.disabled = true
   submitBtn.innerText = 'Submitting...'
@@ -86,42 +93,8 @@ function moveSlide(direction) {
   });
 }
 
-// Variable check karne ke liye ki images unlocked hain ya nahi
-let isUnlocked = false;
-
-function openUnlockForm() {
-    // Agar pehle se unlocked hai, toh dobara form nahi khulega
-    if (isUnlocked) return; 
-    
-    document.getElementById('formModal').style.display = 'flex';
-}
-
-function closeUnlockForm() {
-    document.getElementById('formModal').style.display = 'none';
-}
-
-function handleFormSubmit(event) {
-    event.preventDefault(); // Page refresh hone se rokne ke liye
-    
-    // Yahan aap apna Google Sheets api push wala code sync kar sakti hain
-    
-    isUnlocked = true;
-    closeUnlockForm();
-    
-    // Sabhi image cards se 'locked' class hatayein aur overlays remove karein
-    const cards = document.querySelectorAll('.exclusive-card');
-    cards.forEach(card => {
-        card.classList.remove('locked');
-        
-        // Remove click actions and overlays
-        card.removeAttribute('onclick');
-        const overlay = card.querySelector('.lock-overlay');
-        if (overlay) overlay.remove();
-    });
-}
-
 // Apni Google Script ka Deployment Web App URL yahan paste kijiye
-const GOOGLE_SHEET_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbx0hPhQywNXIZOieXFjUFuoWWHMJE-ugpFhGKvSEC__FndYtYrBUgGEKzPqqa9RhzlI/exec"; 
+const GOOGLE_SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwqvuD-auTVYw8xbOwCyiJLjk9eIHRvWQd01kMD9BSbGauC-ynibRDyaViaMIkN550ZwA/exec';
 
 function closeUnlockForm() {
     document.getElementById('formModal').style.setProperty('display', 'none', 'important');
@@ -129,7 +102,14 @@ function closeUnlockForm() {
 
 function handleFormSubmit(event) {
     event.preventDefault();
-    
+
+    // Honeypot check is form ke liye bhi
+    const honeypotField = event.target.querySelector('.honeypot-field')
+    if (honeypotField && honeypotField.value !== '') {
+        console.log('Bot detected, submission blocked')
+        return
+    }
+
     const submitBtn = event.target.querySelector('.submit-btn');
     const originalBtnText = submitBtn.innerText;
     submitBtn.innerText = "Unlocking... ⏳";
